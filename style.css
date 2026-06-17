@@ -1,0 +1,440 @@
+/* Clean Geometric Architectural Typography Setup */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap');
+
+:root {
+    --bg-stone: #0d0d0f;
+    --panel-bg: #141418;
+    --border-line: rgba(255, 255, 255, 0.05);
+    --text-pure: #ffffff;
+    --text-concrete: #a1a1aa;
+    --warm-glow: rgba(223, 192, 138, 0.06);
+    --accent-amber: #dfc08a; /* Sophisticated warm premium light accent */
+    --curve-minimal: 12px;   /* Clean sharp modernist structural corners */
+    --transition-slow: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-stone);
+    color: var(--text-pure);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Luxury Architectural Embedded Lighting Shadows */
+.ambient-light {
+    position: absolute;
+    width: 60vw;
+    height: 40vh;
+    border-radius: 50%;
+    filter: blur(160px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+#light-top {
+    top: -10%;
+    right: -5%;
+    background: var(--warm-glow);
+}
+
+#light-bottom {
+    bottom: -5%;
+    left: -5%;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Master Structural Grid Wrapping */
+.wrapper {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* Structural Header Axis */
+.arch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-line);
+    padding-bottom: 2rem;
+    margin-bottom: 4rem;
+}
+
+.brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.brand .thin {
+    font-weight: 300;
+    color: var(--text-concrete);
+}
+
+.status-indicator {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: var(--text-concrete);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.pillar-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent-amber);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-amber);
+}
+
+/* Structural Content Blocks Layout */
+.space-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 2.5rem;
+}
+
+@media (max-width: 900px) {
+    .space-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.block {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-line);
+    border-radius: var(--curve-minimal);
+    padding: 3rem;
+    transition: var(--transition-slow);
+}
+
+.block:hover {
+    border-color: rgba(223, 192, 138, 0.2);
+}
+
+.block-tag {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent-amber);
+    margin-bottom: 1.5rem;
+}
+
+/* Section Hero Module */
+.hero-block {
+    grid-column: 1 / -1;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+}
+
+.description {
+    color: var(--text-concrete);
+    font-size: 1.1rem;
+    max-width: 700px;
+}
+
+/* Feed Module Configuration */
+h2 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin-bottom: 2rem;
+}
+
+.feed-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.feed-item {
+    border-left: 2px solid var(--border-line);
+    padding-left: 1.5rem;
+    transition: var(--transition-slow);
+}
+
+.feed-item:hover {
+    border-left-color: var(--accent-amber);
+}
+
+.feed-date {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-concrete);
+    margin-bottom: 0.4rem;
+}
+
+.feed-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.feed-item p {
+    color: var(--text-concrete);
+    font-size: 0.9rem;
+}
+
+/* Competitions Block Elements */
+.competitions-block {
+    grid-column: 1 / -1;
+}
+
+
+.neongreen-text {
+    color: #00ffcc; /* Bright neon green/cyan base */
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(0, 255, 204, 0.6), 
+                 0 0 20px rgba(0, 255, 204, 0.2);
+}
+
+
+
+
+.comp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .comp-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.comp-card {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-line);
+    border-radius: 8px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-slow);
+}
+
+.card-status {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: var(--text-concrete);
+}
+
+.upcoming .card-status {
+    color: var(--accent-amber);
+}
+
+.comp-card h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+}
+
+.comp-details {
+    color: var(--text-concrete);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.prize-tag {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    border: 1px dashed rgba(223, 192, 138, 0.3);
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.participants-list h5 {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--text-concrete);
+    margin-bottom: 0.5rem;
+}
+
+.participants-list ul {
+    list-style: none;
+    font-size: 0.85rem;
+    color: var(--text-concrete);
+    margin-bottom: 2rem;
+}
+
+.participants-list li {
+    margin-bottom: 0.3rem;
+    padding-left: 0.8rem;
+    position: relative;
+}
+
+.participants-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent-amber);
+}
+
+/* Minimalist Action Trigger Button */
+.btn-action {
+    background: var(--text-pure);
+    color: var(--bg-stone);
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: var(--transition-slow);
+}
+
+.btn-action:hover {
+    background: var(--accent-amber);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* Past Archive Hidden Drawer Controls */
+.past {
+    cursor: pointer;
+}
+
+.past:hover {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255,255,255,0.15);
+}
+
+.click-prompt {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--accent-amber);
+    margin-top: auto;
+}
+
+.winner-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition-slow);
+    opacity: 0;
+}
+
+.past.active .winner-drawer {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 1.5rem;
+}
+
+.drawer-divider {
+    height: 1px;
+    background: var(--border-line);
+    margin-bottom: 1.5rem;
+}
+
+.winner-label {
+    display: inline-block;
+    font-size: 0.6rem;
+    background: rgba(255,255,255,0.05);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    color: var(--accent-amber);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.winner-meta {
+    font-size: 0.85rem;
+    color: var(--text-concrete);
+    margin-bottom: 0.5rem;
+}
+
+.prize-claimed {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Footer Grid Base Anchor */
+.arch-footer {
+    margin-top: 6rem;
+}
+
+.footer-divider {
+    height: 1px;
+    background: var(--border-line);
+    margin-bottom: 3rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.footer-left h3 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.footer-left p {
+    color: var(--text-concrete);
+    font-size: 0.95rem;
+    max-width: 450px;
+}
+
+.contact-node {
+    background: rgba(255,255,255,0.01);
+    border: 1px solid var(--border-line);
+    padding: 2rem;
+    border-radius: 6px;
+}
+
+.node-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-concrete);
+    margin-bottom: 0.2rem;
+}
+
+.node-label:not(:first-child) {
+    margin-top: 1.5rem;
+}
+
+.node-val {
+    font-size: 1.05rem;
+    font-weight: 500;
+}
