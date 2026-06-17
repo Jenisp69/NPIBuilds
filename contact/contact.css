@@ -1,0 +1,248 @@
+/* Contact Page Structural Base */
+.dark-theme {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    font-family: inherit;
+    margin: 0;
+}
+
+.form-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.form-header {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.back-link {
+    color: #dfa530; /* Your existing golden yellow accent */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.form-header h1 {
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+    letter-spacing: -1px;
+}
+
+.form-header p {
+    color: #888888;
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Messaging Form UI Card */
+.form-card {
+    background: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 4px;
+    margin-bottom: 60px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: #aaaaaa;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 14px;
+    color: #ffffff;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #dfa530;
+}
+
+.submit-btn {
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s ease;
+}
+
+.submit-btn:hover {
+    background: #dfa530;
+}
+
+/* Footer Section Grid */
+.page-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 40px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    text-align: left;
+}
+
+.footer-column h3 {
+    color: #dfa530;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.footer-column p {
+    color: #888888;
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+.footer-column .admin-name,
+.footer-column .advisor-name {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.footer-link {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-credits {
+    margin-top: 50px;
+    font-size: 0.8rem;
+    color: #444444;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+/* Slider Switch Core Layout */
+.toggle-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #141414;
+    padding: 15px 20px;
+    border-radius: 4px;
+    border: 1px dashed rgba(255, 255, 255, 0.08);
+    margin-bottom: 25px;
+}
+
+.toggle-label {
+    color: #aaaaaa;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Slider Track Details */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #222222;
+    transition: .3s;
+    border-radius: 34px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #888888;
+    transition: .3s;
+    border-radius: 50%;
+}
+
+/* Action Trigger State: Red Override */
+.switch input:checked + .slider {
+    background-color: #ff4444;
+    border-color: #ff4444;
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(24px);
+    background-color: #ffffff;
+}
+
+/* Big Red Anonymous Text Fields */
+.anon-active {
+    color: #ff4444 !important;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #1a0d0d !important;
+    border-color: #ff4444 !important;
+}
+
+/* Base style for the entire note block */
+.field-note {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: #888888; /* Clean, muted text by default */
+    line-height: 1.5;
+    letter-spacing: 0.2px;
+}
+
+/* Base style for the reminder part (matches standard text at first) */
+#contactReminder {
+    color: #888888;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+/* This lights up bright green when Anonymous Mode turns ON */
+.reminder-highlight {
+    color: #4cd137c7 !important;
+    font-weight: 600;
+}

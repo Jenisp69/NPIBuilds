@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Register // NPI Builds</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="./contact.css">
+</head>
+<body class="dark-theme">
+
+    <main class="form-wrapper">
+        <header class="form-header">
+            <a href="../HTML/index.html" class="back-link">← Back to Arena</a>
+            <h1>Connect with NPI Builds</h1>
+            <p>Submit a registration request for the AutoCAD competition or leave a message for our advisers.</p>
+        </header>
+
+        <section class="form-card">
+            <form action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+    
+    <input type="hidden" name="access_key" value="342dfb39-3732-4e8b-8e7c-003c619b167d">
+    <input type="checkbox" name="botcheck" style="display: none;">
+
+    <div class="form-group toggle-wrapper">
+        <span class="toggle-label">Go Anonymous (Report / Suggestion)</span>
+        <label class="switch">
+            <input type="checkbox" id="anonymousToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required placeholder="e.g., Rohan Shrestha">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="e.g., rohan@gmail.com">
+    </div>
+
+    <div class="form-group">
+        <label for="purpose">Purpose</label>
+        <select id="purpose" name="purpose">
+            <option id="optReg" value="Competition Registration">AutoCAD Competition Registration</option>
+            <option id="optSug" value="General Inquiry/Report">General Query / Suggestion / Report</option>
+            <option id="optAdvisor" value="Advisor Communication">Contact Advisor Team</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+    <label for="message">Your Message</label>
+    <textarea id="message" name="message" rows="5" required placeholder="Type your registration details, suggestions, or questions here..."></textarea>
+    <span class="field-note">
+        Note: Submitting the message with your contact details is necessary for us to contact you. 
+        <span id="contactReminder">You can include your contact details in the message box if you want to be reached.</span>
+    </span>
+</div>
+
+    <button type="submit" class="submit-btn">Send Message</button>
+
+                
+            </form>
+        </section>
+
+        <footer class="page-footer">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Administration</h3>
+                    <p class="admin-name">Jenis Pudasaini</p>
+                    <p class="admin-role">Lead Developer</p>
+                    <p>Email: <a href="mailto:jenispudasaini3@gmail.com" class="footer-link">jenispudasaini3@gmail.com</a></p>
+                </div>
+                <div class="footer-column">
+                    <h3>Faculty Advisers</h3>
+                    <p class="advisor-name">Dipak dhakal</p>
+                    <p class="advisor-dept">Department of Civil Engineering, NPI</p>
+                </div>
+            </div>
+            <div class="footer-credits">
+                <p>&copy; 2026 NPI Builds. Engineered for Precision.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="../contact/contact.js"></script>
+</body>
+</html>
