@@ -7,6 +7,936 @@
     --border-line: rgba(255, 255, 255, 0.05);
     --text-pure: #ffffff;
     --text-concrete: #a1a1aa;
+    --warm-glow: rgba(242, 165, 32, 0.06);
+    --accent-amber: #dfc08a; /* Sophisticated warm premium light accent */
+    --curve-minimal: 12px;   /* Clean sharp modernist structural corners */
+    --transition-slow: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-stone);
+    color: var(--text-pure);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Luxury Architectural Embedded Lighting Shadows */
+.ambient-light {
+    position: absolute;
+    width: 60vw;
+    height: 40vh;
+    border-radius: 50%;
+    filter: blur(160px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+#light-top {
+    top: -10%;
+    right: -5%;
+    background: var(--warm-glow);
+}
+
+#light-bottom {
+    bottom: -5%;
+    left: -5%;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Master Structural Grid Wrapping */
+.wrapper {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 2.435rem 2rem; /* Tweeked down to compress the top padding void */
+}
+
+/* Structural Header Axis */
+.arch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-line);
+    padding-bottom: 2rem;
+    margin-bottom: 1.52rem;
+}
+/* Wrapper to keep logo and text aligned inline */
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;               /* Clean spatial gap between logo graphic and text */
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Precise sizing matrix for your geometric logo */
+/* Precise sizing matrix for your geometric logo */
+.brand-logo {
+    height: 64px;            /* Perfectly matches the height profile of your header typography */
+    width: 64px;
+    object-fit: contain;
+    border-radius: 50%;          /* Forces the square PNG canvas into a perfect architectural circle */
+    background: transparent;     /* Ensures no white or off-black background fills the corners */
+    filter: drop-shadow(0 0 8px rgba(255, 238, 0, 0.252)); 
+    transition: var(--transition-slow);
+}
+
+/* Interactive subtle glow amplification when user hovers over the brand node */
+.brand-link:hover .brand-logo {
+    transform: rotate(5deg) scale(1.05); /* Architectural gear shift accent */
+    filter: drop-shadow(0 0 15px rgba(0, 255, 204, 0.5));
+}
+
+.brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.brand .thin {
+    font-weight: 300;
+    color: var(--text-concrete);
+}
+
+.status-indicator {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: var(--text-concrete);
+    animation: slideFromRight 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.pillar-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent-amber);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-amber);
+}
+
+/* Structural Content Blocks Layout */
+.space-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 2.5rem;
+}
+
+@media (max-width: 900px) {
+    .space-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+/* =========================================================================
+   STYLE SPECIFICATION: BREAKOUT EDGE-TO-EDGE GLASS TERMINAL BLUEPRINT
+   ========================================================================= */
+/* =========================================================================
+   STYLE SPECIFICATION: CONTAINED HIGH-PRECISION 4-SLIDE HERO BANNER
+   ========================================================================= */
+
+.Mainhero-section {
+    position: relative;
+    height: 75vh; /* Drop from 90vh to gracefully fit mobile and desktop constraints naturally */
+    min-height: 550px; /* Ensures text never clips outside container borders */
+    
+    /* WIDTH RESTORATION: Fits the screen layout cleanly */
+    width: calc(200% - 2rem);   
+    max-width: 1350px;          
+
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto; 
+    margin-bottom: 4rem; /* Standard structural space below the slider framework */
+
+    border-radius: var(--curve-minimal); 
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: var(--bg-stone); 
+}
+
+/* Background Slider Container Layout Matrix */
+.Mainhero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Base Image Configuration Core */
+.Mainslide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center; 
+    opacity: 0;
+    transform: scale(1.023);
+    
+    /* 2-SLIDE TIMING MATRIX: 12 Seconds Total Runtime Loop (6s per slide) */
+    animation-name: MainsliderFade;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+/* -------------------------------------------------------------------------
+   LOCAL IMAGE PATHS AND CUSTOM FRAMING POSITIONS
+   ------------------------------------------------------------------------- */
+.Mainslide-1 {
+    background-image: url('../NPI college/Whole grp likely banner uneditted.jpg');
+    background-position: center 80%; /* Uses your specific vertical frame shift */
+    animation-delay: 0s;
+}
+
+.Mainslide-2 {
+    background-image: url('../NPI college/small exicted group photo uneditted possible banner.jpg');
+    background-position: center 80%; 
+    animation-delay: 6s;
+}
+
+
+
+/* HIGH-PRECISION SEAMLESS OVERLAY TINT LAYER */
+.Mainhero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1020%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(13, 13, 15, 0.4), var(--bg-stone) 95%);
+    z-index: 2;
+}
+
+/* EXACT 4-IMAGE TIMING PERCENTAGES
+   Each image gets 25% of the total 24s timeline (= 6 seconds window).
+   Crossfade occurs during the first and last 4% transitions.
+*/
+@keyframes MainsliderFade {
+    0%, 100% { opacity: 0; transform: scale(1.023); }
+    4%, 21%  { opacity: 0.65; transform: scale(1); }
+    25%      { opacity: 0; transform: scale(1.023); }
+}
+
+/* Alignment Content Grid Frame (Aligned with your 1250px structural wrapper) */
+.Mainhero-container {
+    width: 100%;
+    max-width: 1250px; 
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 3;
+}
+
+/* FROSTED HIGH-GLOSS CONSOLE INTERFACE PANEL */
+
+.Mainhero-glass-panel {
+    background: rgba(20, 20, 24, 0.3); 
+    border: 1px solid var(--border-line); 
+    backdrop-filter: blur(11px);
+    -webkit-backdrop-filter: blur(11px);
+    max-width: 550px;
+    padding-left: 25px;
+    padding-right: 35px;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    border-radius: var(--curve-minimal); 
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+
+    /* Clean desktop spatial offsets */
+    margin-left: -4.3rem;      
+    margin-top: 19rem;       
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .Mainhero-section {
+        height: auto;
+        min-height: auto;
+        width: 100%; /* Spans edge to edge seamlessly on smaller portable viewports */
+        border-radius: 0; /* Reminiscent of brutalist mobile block architectures */
+        padding: 3rem 0;
+        margin-bottom: 2rem;
+    }
+
+    .Mainhero-glass-panel {
+        margin-left: 0;
+        margin-top: 0; /* Drops desktop offsets to prevent collision with mission layouts below */
+        padding: 24px;
+        max-width: 100%;
+        background: rgba(20, 20, 24, 0.75); /* Deepens opacity slightly to guarantee text legibility on narrow viewports */
+    }
+    
+    /* TARGETING THE MISSION STATEMENT BLOCK BELOW:
+       If you used a negative margin to drag your mission block upward over the photo,
+       neutralize it here so they drop into a vertical stack instead of colliding.
+    */
+    .hero-block, 
+    .block {
+        margin-top: 0; 
+        position: relative;
+        z-index: 4;
+    }
+}
+
+
+
+
+
+
+@keyframes MainsliderFade {
+    0%, 100% { opacity: 0; transform: scale(1.023); }
+    8%, 42%  { opacity: 0.65; transform: scale(1); }
+    50%      { opacity: 0; transform: scale(1.023); }
+}
+
+.Maintech-indicator {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    color: #00f2fe; 
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.Mainhero-glass-panel h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    color: var(--text-pure);
+}
+
+.Maingradient-text {
+    background: linear-gradient(135deg, #00f2fe, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Mainhero-glass-panel p {
+    font-size: 13px;
+    color: var(--text-concrete); 
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+}
+
+.Mainhero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.Mainbtn-neon {
+    background: linear-gradient(135deg, #00f2fe, #0072ff);
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 6px;
+    transition: box-shadow 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+}
+.Mainbtn-neon:hover { box-shadow: 0 0 20px rgba(0, 242, 254, 0.5); }
+
+.Mainbtn-glass {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-line);
+    color: var(--text-pure);
+    text-decoration: none;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px 24px;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+}
+.Mainbtn-glass:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .Mainhero-glass-panel {
+        margin-left: 0;
+        margin-top: 0;
+    }
+    .Mainhero-glass-panel h1 { font-size: 30px; }
+    .Mainhero-buttons { flex-direction: column; gap: 10px; }
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   INSTITUTIONAL BRANDING AXIS
+   ========================================================================== */
+.institutional-axis {
+    grid-column: 1 / -1;       /* Spans across the entire layout grid width */
+    display: flex;
+    justify-content: flex-start;
+    gap: 4rem;                 /* Clean structural separation between data nodes */
+    border-bottom: 1px dashed var(--border-line);
+    padding: 1rem 0 1.5rem 0;
+    margin-top: -0.8rem;         /* Pulls it higher to fill the empty top void */
+    margin-bottom: 1.5rem;
+}
+
+.inst-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.inst-meta .meta-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--accent-amber); /* Matches your premium gold accents */
+}
+
+.inst-meta .meta-val {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--text-concrete);
+}
+
+.inline-link {
+    color: inherit;            /* Forces the link to use your clean --text-concrete color */
+    text-decoration: none;     /* Clears out the default browser blue styling */
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Subtle hover feedback: text shifts smoothly to your signature gold */
+.inline-link:hover {
+    color: var(--accent-amber);
+}
+
+/* Optional: Micro blueprint underlines that animate outward on hover */
+.inline-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--accent-amber);
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.inline-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+/* Right-align the platform control code for better desktop layout balance */
+.network-status {
+    margin-left: auto;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .institutional-axis {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+    }
+    .network-status {
+        margin-left: 0;
+        text-align: left;
+    }
+}
+
+.block {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-line);
+    border-radius: var(--curve-minimal);
+    padding: 3rem;
+    transition: var(--transition-slow);
+}
+
+/* Change your hover rule to look like this */
+.block.is-visible:hover,
+.block:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+    border-color: rgba(223, 192, 138, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.block-tag {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent-amber);
+    margin-bottom: 1.5rem;
+}
+
+/* Section Hero Module */
+.hero-block {
+    grid-column: 1 / -1;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+}
+
+.description {
+    color: var(--text-concrete);
+    font-size: 1.1rem;
+    max-width: 700px;
+}
+
+/* Feed Module Configuration */
+h2 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin-bottom: 2rem;
+}
+
+.feed-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.feed-item {
+    border-left: 2px solid var(--border-line);
+    padding-left: 1.5rem;
+    transition: var(--transition-slow);
+}
+
+.feed-item:hover {
+    border-left-color: var(--accent-amber);
+}
+
+.feed-date {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-concrete);
+    margin-bottom: 0.4rem;
+}
+
+.feed-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.feed-item p {
+    color: var(--text-concrete);
+    font-size: 0.9rem;
+}
+
+/* Competitions Block Elements */
+.competitions-block {
+    grid-column: 1 / -1;
+}
+
+.neongreen-text {
+    color: #00ffcc; /* Bright neon green/cyan base */
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(0, 255, 204, 0.6), 
+                 0 0 20px rgba(0, 255, 204, 0.2);
+}
+
+.comp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+
+@media (max-width: 768px) {
+    .comp-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.comp-card {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-line);
+    border-radius: 8px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-slow);
+}
+
+/* HOVER: Smooth zoom layout inside individual challenge cards */
+.comp-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-status {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: var(--text-concrete);
+}
+
+.upcoming .card-status {
+    color: var(--accent-amber);
+}
+
+.comp-card h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+}
+
+.comp-details {
+    color: var(--text-concrete);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.prize-tag {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    border: 1px dashed rgba(223, 192, 138, 0.3);
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.participants-list h5 {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--text-concrete);
+    margin-bottom: 0.5rem;
+}
+
+.participants-list ul {
+    list-style: none;
+    font-size: 0.85rem;
+    color: var(--text-concrete);
+    margin-bottom: 2rem;
+}
+
+.participants-list li {
+    margin-bottom: 0.3rem;
+    padding-left: 0.8rem;
+    position: relative;
+}
+
+.participants-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent-amber);
+}
+
+/* Minimalist Action Trigger Button */
+.btn-action {
+    background: var(--text-pure);
+    color: var(--bg-stone);
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    border: none;
+    transition: var(--transition-slow);
+}
+
+.btn-action:hover {
+    background: var(--accent-amber);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+       transform: translateY(-4px) scale(1.05);
+}
+
+/* Past Archive Hidden Drawer Controls */
+.past {
+    cursor: pointer;
+}
+
+.past:hover {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255,255,255,0.15);
+}
+
+.click-prompt {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--accent-amber);
+    margin-top: auto;
+}
+
+.winner-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition-slow);
+    opacity: 0;
+}
+
+.past.active .winner-drawer {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 1.5rem;
+}
+
+.drawer-divider {
+    height: 1px;
+    background: var(--border-line);
+    margin-bottom: 1.5rem;
+}
+
+.winner-label {
+    display: inline-block;
+    font-size: 0.6rem;
+    background: rgba(255,255,255,0.05);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    color: var(--accent-amber);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.winner-meta {
+    font-size: 0.85rem;
+    color: var(--text-concrete);
+    margin-bottom: 0.5rem;
+}
+
+.prize-claimed {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Footer Grid Base Anchor */
+.arch-footer {
+    margin-top: 6rem;
+}
+
+.footer-divider {
+    height: 1px;
+    background: var(--border-line);
+    margin-bottom: 3rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.footer-left h3 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.footer-left p {
+    color: var(--text-concrete);
+    font-size: 0.95rem;
+    max-width: 450px;
+}
+
+.contact-node {
+    background: rgba(255,255,255,0.01);
+    border: 1px solid var(--border-line);
+    padding: 2rem;
+    border-radius: 6px;
+}
+
+.node-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-concrete);
+    margin-bottom: 0.2rem;
+}
+
+.node-label:not(:first-child) {
+    margin-top: 1.5rem;
+}
+
+.node-val {
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+/* --- SCROLL REVEAL UTILITIES (Keeps pristine amber styling) --- */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Connect the layout wrappers to your keyframe engines */
+.brand-animate {
+    opacity: 0; /* Prevents visual flashing on quick refreshes */
+    animation: slideFromLeft 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.status-animate {
+    opacity: 0;
+    animation: slideFromRight 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* --- INITIAL PAGE LOAD ANIMATIONS --- */
+
+/* Slide in smoothly from the Left */
+@keyframes slideFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px); /* Starts 40px to the left */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);    /* Settles perfectly in place */
+    }
+}
+
+/* Slide in smoothly from the Right */
+@keyframes slideFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);  /* Starts 40px to the right */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);    /* Settles perfectly in place */
+    }
+} 
+
+
+
+
+
+
+
+/* ==========================================================================
+   RESPONSIVE MOBILE HEADER PATCH (Max-Width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. Master Wrapper Compression */
+    .wrapper {
+        padding: 1.5rem 1rem; /* Extra tight padding on mobile screens */
+    }
+
+    /* 2. Stack the Header Layout Vertically */
+    .arch-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    /* 3. Scale down the Logo and Typography Matrix */
+    .brand-logo {
+        height: 48px; /* Scales down from 64px to match mobile headers */
+        width: 48px;
+    }
+
+    .brand {
+        font-size: 1.1rem; /* Compact layout tracking */
+        letter-spacing: 1px;
+    }
+
+    /* 4. Reposition Status Indicator Element */
+    .status-indicator {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+        align-self: flex-start; /* Keeps it perfectly left-aligned on stack */
+    }
+
+    /* 5. Fluid Typography Scaling for Main Headings */
+    h1 {
+        font-size: 1.8rem; /* Prevents the massive title from breaking awkwardly */
+        line-height: 1.3;
+    }
+    
+    .description {
+        font-size: 0.95rem;
+    }
+}/* Clean Geometric Architectural Typography Setup */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap');
+
+:root {
+    --bg-stone: #0d0d0f;
+    --panel-bg: #141418;
+    --border-line: rgba(255, 255, 255, 0.05);
+    --text-pure: #ffffff;
+    --text-concrete: #a1a1aa;
     --warm-glow: rgba(223, 192, 138, 0.06);
     --accent-amber: #dfc08a; /* Sophisticated warm premium light accent */
     --curve-minimal: 12px;   /* Clean sharp modernist structural corners */
@@ -618,6 +1548,1491 @@ h2 {
 } 
 
 
+
+
+
+
+
+/* ==========================================================================
+   RESPONSIVE MOBILE HEADER PATCH (Max-Width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. Master Wrapper Compression */
+    .wrapper {
+        padding: 1.5rem 1rem; /* Extra tight padding on mobile screens */
+    }
+
+    /* 2. Stack the Header Layout Vertically */
+    .arch-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    /* 3. Scale down the Logo and Typography Matrix */
+    .brand-logo {
+        height: 48px; /* Scales down from 64px to match mobile headers */
+        width: 48px;
+    }
+
+    .brand {
+        font-size: 1.1rem; /* Compact layout tracking */
+        letter-spacing: 1px;
+    }
+
+    /* 4. Reposition Status Indicator Element */
+    .status-indicator {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+        align-self: flex-start; /* Keeps it perfectly left-aligned on stack */
+    }
+
+    /* 5. Fluid Typography Scaling for Main Headings */
+    h1 {
+        font-size: 1.8rem; /* Prevents the massive title from breaking awkwardly */
+        line-height: 1.3;
+    }
+    
+    .description {
+        font-size: 0.95rem;
+    }
+}/* Clean Geometric Architectural Typography Setup */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap');
+
+:root {
+    --bg-stone: #0d0d0f;
+    --panel-bg: #141418;
+    --border-line: rgba(255, 255, 255, 0.05);
+    --text-pure: #ffffff;
+    --text-concrete: #a1a1aa;
+    --warm-glow: rgba(223, 192, 138, 0.06);
+    --accent-amber: #dfc08a; /* Sophisticated warm premium light accent */
+    --curve-minimal: 12px;   /* Clean sharp modernist structural corners */
+    --transition-slow: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-stone);
+    color: var(--text-pure);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Luxury Architectural Embedded Lighting Shadows */
+.ambient-light {
+    position: absolute;
+    width: 60vw;
+    height: 40vh;
+    border-radius: 50%;
+    filter: blur(160px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+#light-top {
+    top: -10%;
+    right: -5%;
+    background: var(--warm-glow);
+}
+
+#light-bottom {
+    bottom: -5%;
+    left: -5%;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Master Structural Grid Wrapping */
+.wrapper {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 2.435rem 2rem; /* Tweeked down to compress the top padding void */
+}
+
+/* Structural Header Axis */
+.arch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-line);
+    padding-bottom: 2rem;
+    margin-bottom: 1.52rem;
+}
+/* Wrapper to keep logo and text aligned inline */
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;               /* Clean spatial gap between logo graphic and text */
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Precise sizing matrix for your geometric logo */
+/* Precise sizing matrix for your geometric logo */
+.brand-logo {
+    height: 64px;            /* Perfectly matches the height profile of your header typography */
+    width: 64px;
+    object-fit: contain;
+    border-radius: 50%;          /* Forces the square PNG canvas into a perfect architectural circle */
+    background: transparent;     /* Ensures no white or off-black background fills the corners */
+    filter: drop-shadow(0 0 8px rgba(255, 238, 0, 0.252)); 
+    transition: var(--transition-slow);
+}
+
+/* Interactive subtle glow amplification when user hovers over the brand node */
+.brand-link:hover .brand-logo {
+    transform: rotate(5deg) scale(1.05); /* Architectural gear shift accent */
+    filter: drop-shadow(0 0 15px rgba(0, 255, 204, 0.5));
+}
+
+.brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.brand .thin {
+    font-weight: 300;
+    color: var(--text-concrete);
+}
+
+.status-indicator {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: var(--text-concrete);
+    animation: slideFromRight 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.pillar-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent-amber);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-amber);
+}
+
+/* Structural Content Blocks Layout */
+.space-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 2.5rem;
+}
+
+@media (max-width: 900px) {
+    .space-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+/* ==========================================================================
+   INSTITUTIONAL BRANDING AXIS
+   ========================================================================== */
+.institutional-axis {
+    grid-column: 1 / -1;       /* Spans across the entire layout grid width */
+    display: flex;
+    justify-content: flex-start;
+    gap: 4rem;                 /* Clean structural separation between data nodes */
+    border-bottom: 1px dashed var(--border-line);
+    padding: 1rem 0 1.5rem 0;
+    margin-top: -0.8rem;         /* Pulls it higher to fill the empty top void */
+    margin-bottom: 1.5rem;
+}
+
+.inst-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.inst-meta .meta-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--accent-amber); /* Matches your premium gold accents */
+}
+
+.inst-meta .meta-val {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--text-concrete);
+}
+
+.inline-link {
+    color: inherit;            /* Forces the link to use your clean --text-concrete color */
+    text-decoration: none;     /* Clears out the default browser blue styling */
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Subtle hover feedback: text shifts smoothly to your signature gold */
+.inline-link:hover {
+    color: var(--accent-amber);
+}
+
+/* Optional: Micro blueprint underlines that animate outward on hover */
+.inline-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--accent-amber);
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.inline-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+/* Right-align the platform control code for better desktop layout balance */
+.network-status {
+    margin-left: auto;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .institutional-axis {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+    }
+    .network-status {
+        margin-left: 0;
+        text-align: left;
+    }
+}
+
+.block {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-line);
+    border-radius: var(--curve-minimal);
+    padding: 3rem;
+    transition: var(--transition-slow);
+}
+
+/* Change your hover rule to look like this */
+.block.is-visible:hover,
+.block:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+    border-color: rgba(223, 192, 138, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.block-tag {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent-amber);
+    margin-bottom: 1.5rem;
+}
+
+/* Section Hero Module */
+.hero-block {
+    grid-column: 1 / -1;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+}
+
+.description {
+    color: var(--text-concrete);
+    font-size: 1.1rem;
+    max-width: 700px;
+}
+
+/* Feed Module Configuration */
+h2 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin-bottom: 2rem;
+}
+
+.feed-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.feed-item {
+    border-left: 2px solid var(--border-line);
+    padding-left: 1.5rem;
+    transition: var(--transition-slow);
+}
+
+.feed-item:hover {
+    border-left-color: var(--accent-amber);
+}
+
+.feed-date {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-concrete);
+    margin-bottom: 0.4rem;
+}
+
+.feed-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.feed-item p {
+    color: var(--text-concrete);
+    font-size: 0.9rem;
+}
+
+/* Competitions Block Elements */
+.competitions-block {
+    grid-column: 1 / -1;
+}
+
+.neongreen-text {
+    color: #00ffcc; /* Bright neon green/cyan base */
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(0, 255, 204, 0.6), 
+                 0 0 20px rgba(0, 255, 204, 0.2);
+}
+
+.comp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+
+@media (max-width: 768px) {
+    .comp-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.comp-card {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-line);
+    border-radius: 8px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-slow);
+}
+
+/* HOVER: Smooth zoom layout inside individual challenge cards */
+.comp-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-status {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: var(--text-concrete);
+}
+
+.upcoming .card-status {
+    color: var(--accent-amber);
+}
+
+.comp-card h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+}
+
+.comp-details {
+    color: var(--text-concrete);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.prize-tag {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    border: 1px dashed rgba(223, 192, 138, 0.3);
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.participants-list h5 {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--text-concrete);
+    margin-bottom: 0.5rem;
+}
+
+.participants-list ul {
+    list-style: none;
+    font-size: 0.85rem;
+    color: var(--text-concrete);
+    margin-bottom: 2rem;
+}
+
+.participants-list li {
+    margin-bottom: 0.3rem;
+    padding-left: 0.8rem;
+    position: relative;
+}
+
+.participants-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent-amber);
+}
+
+/* Minimalist Action Trigger Button */
+.btn-action {
+    background: var(--text-pure);
+    color: var(--bg-stone);
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    border: none;
+    transition: var(--transition-slow);
+}
+
+.btn-action:hover {
+    background: var(--accent-amber);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+       transform: translateY(-4px) scale(1.05);
+}
+
+/* Past Archive Hidden Drawer Controls */
+.past {
+    cursor: pointer;
+}
+
+.past:hover {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255,255,255,0.15);
+}
+
+.click-prompt {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--accent-amber);
+    margin-top: auto;
+}
+
+.winner-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition-slow);
+    opacity: 0;
+}
+
+.past.active .winner-drawer {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 1.5rem;
+}
+
+.drawer-divider {
+    height: 1px;
+    background: var(--border-line);
+    margin-bottom: 1.5rem;
+}
+
+.winner-label {
+    display: inline-block;
+    font-size: 0.6rem;
+    background: rgba(255,255,255,0.05);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    color: var(--accent-amber);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.winner-meta {
+    font-size: 0.85rem;
+    color: var(--text-concrete);
+    margin-bottom: 0.5rem;
+}
+
+.prize-claimed {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Media Matrix Layout Rules */
+.gallery-block {
+    margin-top: 40px;
+}
+
+.matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.matrix-item {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    aspect-ratio: 16 / 10;
+    background: #111;
+}
+
+.matrix-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(30%) contrast(110%);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Glassy Hover Mask Architecture */
+.matrix-glass-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.4);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    opacity: 0;
+}
+
+.matrix-item:hover .matrix-glass-overlay {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(22, 22, 22, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.matrix-item:hover .matrix-img {
+    transform: scale(1.03);
+}
+
+.matrix-meta {
+    transform: translateY(10px);
+    transition: transform 0.3s ease;
+}
+
+.matrix-item:hover .matrix-meta {
+    transform: translateY(0);
+}
+
+.matrix-node {
+    display: block;
+    font-size: 0.75rem;
+    color: #dfa530; /* Your golden yellow token */
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.matrix-caption {
+    font-size: 0.95rem;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+/* Footer Grid Base Anchor */
+.arch-footer {
+    margin-top: 6rem;
+}
+
+.footer-divider {
+    height: 1px;
+    background: var(--border-line);
+    margin-bottom: 3rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.footer-left h3 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.footer-left p {
+    color: var(--text-concrete);
+    font-size: 0.95rem;
+    max-width: 450px;
+}
+
+.contact-node {
+    background: rgba(255,255,255,0.01);
+    border: 1px solid var(--border-line);
+    padding: 2rem;
+    border-radius: 6px;
+}
+
+.node-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-concrete);
+    margin-bottom: 0.2rem;
+}
+
+.node-label:not(:first-child) {
+    margin-top: 1.5rem;
+}
+
+.node-val {
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+/* --- SCROLL REVEAL UTILITIES (Keeps pristine amber styling) --- */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Connect the layout wrappers to your keyframe engines */
+.brand-animate {
+    opacity: 0; /* Prevents visual flashing on quick refreshes */
+    animation: slideFromLeft 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.status-animate {
+    opacity: 0;
+    animation: slideFromRight 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* --- INITIAL PAGE LOAD ANIMATIONS --- */
+
+/* Slide in smoothly from the Left */
+@keyframes slideFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px); /* Starts 40px to the left */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);    /* Settles perfectly in place */
+    }
+}
+
+/* Slide in smoothly from the Right */
+@keyframes slideFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);  /* Starts 40px to the right */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);    /* Settles perfectly in place */
+    }
+} 
+
+
+
+
+
+
+
+/* ==========================================================================
+   RESPONSIVE MOBILE HEADER PATCH (Max-Width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. Master Wrapper Compression */
+    .wrapper {
+        padding: 1.5rem 1rem; /* Extra tight padding on mobile screens */
+    }
+
+    /* 2. Stack the Header Layout Vertically */
+    .arch-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    /* 3. Scale down the Logo and Typography Matrix */
+    .brand-logo {
+        height: 48px; /* Scales down from 64px to match mobile headers */
+        width: 48px;
+    }
+
+    .brand {
+        font-size: 1.1rem; /* Compact layout tracking */
+        letter-spacing: 1px;
+    }
+
+    /* 4. Reposition Status Indicator Element */
+    .status-indicator {
+        font-size: 0.65rem;
+        letter-spacing: 1px;
+        align-self: flex-start; /* Keeps it perfectly left-aligned on stack */
+    }
+
+    /* 5. Fluid Typography Scaling for Main Headings */
+    h1 {
+        font-size: 1.8rem; /* Prevents the massive title from breaking awkwardly */
+        line-height: 1.3;
+    }
+    
+    .description {
+        font-size: 0.95rem;
+    }
+}/* Clean Geometric Architectural Typography Setup */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap');
+
+:root {
+    --bg-stone: #0d0d0f;
+    --panel-bg: #141418;
+    --border-line: rgba(255, 255, 255, 0.05);
+    --text-pure: #ffffff;
+    --text-concrete: #a1a1aa;
+    --warm-glow: rgba(223, 192, 138, 0.06);
+    --accent-amber: #dfc08a; /* Sophisticated warm premium light accent */
+    --curve-minimal: 12px;   /* Clean sharp modernist structural corners */
+    --transition-slow: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-stone);
+    color: var(--text-pure);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* Luxury Architectural Embedded Lighting Shadows */
+.ambient-light {
+    position: absolute;
+    width: 60vw;
+    height: 40vh;
+    border-radius: 50%;
+    filter: blur(160px);
+    pointer-events: none;
+    z-index: -1;
+}
+
+#light-top {
+    top: -10%;
+    right: -5%;
+    background: var(--warm-glow);
+}
+
+#light-bottom {
+    bottom: -5%;
+    left: -5%;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Master Structural Grid Wrapping */
+.wrapper {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 2.435rem 2rem; /* Tweeked down to compress the top padding void */
+}
+
+/* Structural Header Axis */
+.arch-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-line);
+    padding-bottom: 2rem;
+    margin-bottom: 1.52rem;
+}
+/* Wrapper to keep logo and text aligned inline */
+.brand-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;               /* Clean spatial gap between logo graphic and text */
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Precise sizing matrix for your geometric logo */
+/* Precise sizing matrix for your geometric logo */
+.brand-logo {
+    height: 64px;            /* Perfectly matches the height profile of your header typography */
+    width: 64px;
+    object-fit: contain;
+    border-radius: 50%;          /* Forces the square PNG canvas into a perfect architectural circle */
+    background: transparent;     /* Ensures no white or off-black background fills the corners */
+    filter: drop-shadow(0 0 8px rgba(255, 238, 0, 0.252)); 
+    transition: var(--transition-slow);
+}
+
+/* Interactive subtle glow amplification when user hovers over the brand node */
+.brand-link:hover .brand-logo {
+    transform: rotate(5deg) scale(1.05); /* Architectural gear shift accent */
+    filter: drop-shadow(0 0 15px rgba(0, 255, 204, 0.5));
+}
+
+.brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.brand .thin {
+    font-weight: 300;
+    color: var(--text-concrete);
+}
+
+.status-indicator {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: var(--text-concrete);
+    animation: slideFromRight 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.pillar-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--accent-amber);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-amber);
+}
+
+/* Structural Content Blocks Layout */
+.space-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 2.5rem;
+}
+
+@media (max-width: 900px) {
+    .space-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+/* ==========================================================================
+   INSTITUTIONAL BRANDING AXIS
+   ========================================================================== */
+.institutional-axis {
+    grid-column: 1 / -1;       /* Spans across the entire layout grid width */
+    display: flex;
+    justify-content: flex-start;
+    gap: 4rem;                 /* Clean structural separation between data nodes */
+    border-bottom: 1px dashed var(--border-line);
+    padding: 1rem 0 1.5rem 0;
+    margin-top: -0.8rem;         /* Pulls it higher to fill the empty top void */
+    margin-bottom: 1.5rem;
+}
+
+.inst-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.inst-meta .meta-label {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--accent-amber); /* Matches your premium gold accents */
+}
+
+.inst-meta .meta-val {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--text-concrete);
+}
+
+.inline-link {
+    color: inherit;            /* Forces the link to use your clean --text-concrete color */
+    text-decoration: none;     /* Clears out the default browser blue styling */
+    display: inline-block;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Subtle hover feedback: text shifts smoothly to your signature gold */
+.inline-link:hover {
+    color: var(--accent-amber);
+}
+
+/* Optional: Micro blueprint underlines that animate outward on hover */
+.inline-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--accent-amber);
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.inline-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+/* Right-align the platform control code for better desktop layout balance */
+.network-status {
+    margin-left: auto;
+    text-align: right;
+}
+
+@media (max-width: 768px) {
+    .institutional-axis {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+    }
+    .network-status {
+        margin-left: 0;
+        text-align: left;
+    }
+}
+
+.block {
+    background: var(--panel-bg);
+    border: 1px solid var(--border-line);
+    border-radius: var(--curve-minimal);
+    padding: 3rem;
+    transition: var(--transition-slow);
+}
+
+/* Change your hover rule to look like this */
+.block.is-visible:hover,
+.block:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+    border-color: rgba(223, 192, 138, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.block-tag {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent-amber);
+    margin-bottom: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Section MainHero Module */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Section Hero Module */
+.hero-block {
+    grid-column: 1 / -1;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+}
+
+.description {
+    color: var(--text-concrete);
+    font-size: 1.1rem;
+    max-width: 700px;
+}
+
+/* Feed Module Configuration */
+h2 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    margin-bottom: 2rem;
+}
+
+.feed-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.feed-item {
+    border-left: 2px solid var(--border-line);
+    padding-left: 1.5rem;
+    transition: var(--transition-slow);
+}
+
+.feed-item:hover {
+    border-left-color: var(--accent-amber);
+}
+
+.feed-date {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-concrete);
+    margin-bottom: 0.4rem;
+}
+
+.feed-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.feed-item p {
+    color: var(--text-concrete);
+    font-size: 0.9rem;
+}
+
+/* Competitions Block Elements */
+.competitions-block {
+    grid-column: 1 / -1;
+}
+
+.neongreen-text {
+    color: #00ffcc; /* Bright neon green/cyan base */
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(0, 255, 204, 0.6), 
+                 0 0 20px rgba(0, 255, 204, 0.2);
+}
+
+.comp-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+
+@media (max-width: 768px) {
+    .comp-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.comp-card {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-line);
+    border-radius: 8px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-slow);
+}
+
+/* HOVER: Smooth zoom layout inside individual challenge cards */
+.comp-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.card-status {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    color: var(--text-concrete);
+}
+
+.upcoming .card-status {
+    color: var(--accent-amber);
+}
+
+.comp-card h3 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-bottom: 0.8rem;
+}
+
+.comp-details {
+    color: var(--text-concrete);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.prize-tag {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    border: 1px dashed rgba(223, 192, 138, 0.3);
+    padding: 0.6rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.participants-list h5 {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--text-concrete);
+    margin-bottom: 0.5rem;
+}
+
+.participants-list ul {
+    list-style: none;
+    font-size: 0.85rem;
+    color: var(--text-concrete);
+    margin-bottom: 2rem;
+}
+
+.participants-list li {
+    margin-bottom: 0.3rem;
+    padding-left: 0.8rem;
+    position: relative;
+}
+
+.participants-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent-amber);
+}
+
+/* Minimalist Action Trigger Button */
+.btn-action {
+    background: var(--text-pure);
+    color: var(--bg-stone);
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    border: none;
+    transition: var(--transition-slow);
+}
+
+.btn-action:hover {
+    background: var(--accent-amber);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+       transform: translateY(-4px) scale(1.05);
+}
+
+/* Past Archive Hidden Drawer Controls */
+.past {
+    cursor: pointer;
+}
+
+.past:hover {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255,255,255,0.15);
+}
+
+.click-prompt {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--accent-amber);
+    margin-top: auto;
+}
+
+.winner-drawer {
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition-slow);
+    opacity: 0;
+}
+
+.past.active .winner-drawer {
+    max-height: 300px;
+    opacity: 1;
+    margin-top: 1.5rem;
+}
+
+.drawer-divider {
+    height: 1px;
+    background: var(--border-line);
+    margin-bottom: 1.5rem;
+}
+
+.winner-label {
+    display: inline-block;
+    font-size: 0.6rem;
+    background: rgba(255,255,255,0.05);
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    color: var(--accent-amber);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.winner-meta {
+    font-size: 0.85rem;
+    color: var(--text-concrete);
+    margin-bottom: 0.5rem;
+}
+
+.prize-claimed {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Footer Grid Base Anchor */
+.arch-footer {
+    margin-top: 6rem;
+}
+
+.footer-divider {
+    height: 1px;
+    background: var(--border-line);
+    margin-bottom: 3rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.footer-left h3 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.footer-left p {
+    color: var(--text-concrete);
+    font-size: 0.95rem;
+    max-width: 450px;
+}
+
+.contact-node {
+    background: rgba(255,255,255,0.01);
+    border: 1px solid var(--border-line);
+    padding: 2rem;
+    border-radius: 6px;
+}
+
+.node-label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--text-concrete);
+    margin-bottom: 0.2rem;
+}
+
+.node-label:not(:first-child) {
+    margin-top: 1.5rem;
+}
+
+.node-val {
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+/* --- SCROLL REVEAL UTILITIES (Keeps pristine amber styling) --- */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Connect the layout wrappers to your keyframe engines */
+.brand-animate {
+    opacity: 0; /* Prevents visual flashing on quick refreshes */
+    animation: slideFromLeft 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.status-animate {
+    opacity: 0;
+    animation: slideFromRight 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+/* --- INITIAL PAGE LOAD ANIMATIONS --- */
+
+/* Slide in smoothly from the Left */
+@keyframes slideFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px); /* Starts 40px to the left */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);    /* Settles perfectly in place */
+    }
+}
+
+/* Slide in smoothly from the Right */
+@keyframes slideFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);  /* Starts 40px to the right */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);    /* Settles perfectly in place */
+    }
+} 
 
 
 

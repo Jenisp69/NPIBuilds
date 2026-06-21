@@ -1,3 +1,5 @@
+
+
 function toggleWinnerPanel(cardElement) {
     cardElement.classList.toggle("active");
     const promptText = cardElement.querySelector(".click-prompt");

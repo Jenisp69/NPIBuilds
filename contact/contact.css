@@ -1,6 +1,10 @@
-/* Contact Page Structural Base */
+/* Contact Page Structural Base & Ambient Lighting Elements */
 .dark-theme {
     background-color: #0a0a0a;
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(223, 165, 48, 0.04), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.02), transparent 25%);
+    background-attachment: fixed;
     color: #ffffff;
     font-family: inherit;
     margin: 0;
@@ -18,7 +22,7 @@
 }
 
 .back-link {
-    color: #dfa530; /* Your existing golden yellow accent */
+    color: #dfa530; /* Golden yellow accent */
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
@@ -38,12 +42,15 @@
     font-size: 1rem;
 }
 
-/* Messaging Form UI Card */
+/* Glassmorphic Form Card Substrate */
 .form-card {
-    background: #111111;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(17, 17, 17, 0.3);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
     padding: 40px;
-    border-radius: 4px;
+    border-radius: 6px;
     margin-bottom: 60px;
 }
 
@@ -61,16 +68,20 @@
     margin-bottom: 8px;
 }
 
+/* Semi-Transparent Glass Fields */
 .form-group input,
 .form-group select,
 .form-group textarea {
-    background: #161616;
+    background: rgba(22, 22, 22, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 14px;
     color: #ffffff;
     border-radius: 4px;
     font-family: inherit;
     font-size: 0.95rem;
+    transition: all 0.3s ease;
 }
 
 .form-group input:focus,
@@ -78,6 +89,8 @@
 .form-group textarea:focus {
     outline: none;
     border-color: #dfa530;
+    background: rgba(30, 30, 30, 0.6);
+    box-shadow: 0 0 12px rgba(223, 165, 48, 0.15);
 }
 
 .submit-btn {
@@ -97,7 +110,7 @@
     background: #dfa530;
 }
 
-/* Footer Section Grid */
+/* Footer Section Layout */
 .page-footer {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding-top: 40px;
@@ -149,15 +162,17 @@
     }
 }
 
-/* Slider Switch Core Layout */
+/* Glass Wrapper for Slider Switch */
 .toggle-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #141414;
+    background: rgba(20, 20, 20, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     padding: 15px 20px;
     border-radius: 4px;
-    border: 1px dashed rgba(255, 255, 255, 0.08);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
     margin-bottom: 25px;
 }
 
@@ -181,7 +196,7 @@
     height: 0;
 }
 
-/* Slider Track Details */
+/* Slider Track Architecture */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -204,7 +219,7 @@
     border-radius: 50%;
 }
 
-/* Action Trigger State: Red Override */
+/* State Override Matrix */
 .switch input:checked + .slider {
     background-color: #ff4444;
     border-color: #ff4444;
@@ -215,33 +230,31 @@
     background-color: #ffffff;
 }
 
-/* Big Red Anonymous Text Fields */
+/* High-Contrast Anonymous State Input Overrides */
 .anon-active {
     color: #ff4444 !important;
     font-weight: 800;
     letter-spacing: 1px;
     text-transform: uppercase;
-    background-color: #1a0d0d !important;
+    background-color: rgba(26, 13, 13, 0.6) !important;
     border-color: #ff4444 !important;
+    box-shadow: inset 0 0 8px rgba(255, 68, 68, 0.1);
 }
 
-/* Base style for the entire note block */
 .field-note {
     display: block;
     margin-top: 8px;
     font-size: 0.85rem;
-    color: #888888; /* Clean, muted text by default */
+    color: #888888;
     line-height: 1.5;
     letter-spacing: 0.2px;
 }
 
-/* Base style for the reminder part (matches standard text at first) */
 #contactReminder {
     color: #888888;
     transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
-/* This lights up bright green when Anonymous Mode turns ON */
 .reminder-highlight {
     color: #4cd137c7 !important;
     font-weight: 600;
