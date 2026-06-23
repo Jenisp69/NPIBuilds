@@ -70,24 +70,27 @@ const SUPABASE_ANON_KEY = "sb_publishable_aD_OIx_4gmkMWicC2QcH8w_A0Tm1DYU";
             if (prizeNode && data.comp_card_prize) prizeNode.textContent = data.comp_card_prize;
         }
 
-        // 5. Live Vector Injection: Visual Matrix Archive Images
+// 5. Live Vector Injection: Visual Matrix Archive Images
         const matrixImages = document.querySelectorAll('.matrix-grid .matrix-item img');
         if (matrixImages.length >= 2) {
             if (data.archive_img_1) matrixImages[0].src = data.archive_img_1;
             if (data.archive_img_2) matrixImages[1].src = data.archive_img_2;
         }
 
-        // 6. Live Vector Injection: Floating Modernist Bubble Content Elements
+        // =========================================================================
+        // 6. Live Vector Injection: Floating Modernist Bubble Content Elements (FIXED)
+        // =========================================================================
         const bubbleNodes = document.querySelectorAll('.floating-bubbles-container .bubble-floating');
         if (bubbleNodes.length >= 2) {
-            if (data.bubble_img_1) {
+            // Only overwrite if the database field exists and isn't a blank placeholder string
+            if (data.bubble_img_1 && data.bubble_img_1.trim() !== "" && data.bubble_img_1 !== "PLACEHOLDER") {
                 bubbleNodes[0].setAttribute('data-img', data.bubble_img_1);
                 const bubbleInnerImg1 = bubbleNodes[0].querySelector('img');
                 if (bubbleInnerImg1) bubbleInnerImg1.src = data.bubble_img_1;
             }
             if (data.bubble_desc_1) bubbleNodes[0].setAttribute('data-desc', data.bubble_desc_1);
             
-            if (data.bubble_img_2) {
+            if (data.bubble_img_2 && data.bubble_img_2.trim() !== "" && data.bubble_img_2 !== "PLACEHOLDER") {
                 bubbleNodes[1].setAttribute('data-img', data.bubble_img_2);
                 const bubbleInnerImg2 = bubbleNodes[1].querySelector('img');
                 if (bubbleInnerImg2) bubbleInnerImg2.src = data.bubble_img_2;
