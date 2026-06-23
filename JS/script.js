@@ -1,3 +1,108 @@
+// ============================================================================
+// INDEPENDENT CLOUD INFRASTRUCTURE VECTOR
+// ============================================================================
+const SUPABASE_URL = "https://ncxnszpybvzxidxiakrg.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_aD_OIx_4gmkMWicC2QcH8w_A0Tm1DYU";
+
+// Run asynchronous sync in an isolated pipeline to guarantee zero animation interference
+(async function initializeDataPipeline() {
+    try {
+        if (SUPABASE_URL === "YOUR_SUPABASE_URL") return;
+
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
+        const { data, error } = await supabaseClient
+            .from('landing_page_data')
+            .select('*')
+            .single();
+
+        if (error) throw error;
+        if (!data) return;
+
+        // 1. Live Vector Injection: Countdown Clock Target Date
+        if (data.countdown_target) {
+            const clockContainer = document.querySelector('.matrix-countdown');
+            if (clockContainer) {
+                clockContainer.setAttribute('data-target', data.countdown_target);
+                // Dynamically re-trigger clock parsing if active
+                if (typeof initializeMatrixCountdowns === 'function') {
+                    initializeMatrixCountdowns();
+                }
+            }
+        }
+
+        // 2. Live Vector Injection: Club Feed Item 1
+        const feedItems = document.querySelectorAll('.feed-container .feed-item');
+        if (feedItems.length >= 1) {
+            const date1 = feedItems[0].querySelector('.feed-date');
+            const title1 = feedItems[0].querySelector('h4');
+            const body1 = feedItems[0].querySelector('p');
+            
+            if (date1 && data.insight_1_date) date1.textContent = data.insight_1_date;
+            if (title1 && data.insight_1_title) title1.textContent = data.insight_1_title;
+            if (body1 && data.insight_1_body) body1.textContent = data.insight_1_body;
+        }
+
+        // 3. Live Vector Injection: Club Feed Item 2
+        if (feedItems.length >= 2) {
+            const title2 = feedItems[1].querySelector('h4');
+            const prize2 = feedItems[1].querySelector('.feed-date');
+            const body2 = feedItems[1].querySelector('p');
+
+            if (title2 && data.insight_2_title) title2.textContent = data.insight_2_title;
+            if (prize2 && data.insight_2_prize) {
+                prize2.innerHTML = `COMING SOON // PRIZE: <span class="neongreen-text">${data.insight_2_prize}</span>`;
+            }
+            if (body2 && data.insight_2_body) body2.textContent = data.insight_2_body;
+        }
+
+        // 4. Live Vector Injection: Competitions Hub Card
+        const upcomingCard = document.querySelector('.comp-card.upcoming');
+        if (upcomingCard) {
+            const statusNode = upcomingCard.querySelector('.card-status');
+            const titleNode = upcomingCard.querySelector('h3');
+            const descNode = upcomingCard.querySelector('.comp-details');
+            const prizeNode = upcomingCard.querySelector('.prize-tag');
+
+            if (statusNode && data.comp_card_status) statusNode.textContent = data.comp_card_status;
+            if (titleNode && data.comp_card_title) titleNode.textContent = data.comp_card_title;
+            if (descNode && data.comp_card_desc) descNode.textContent = data.comp_card_desc;
+            if (prizeNode && data.comp_card_prize) prizeNode.textContent = data.comp_card_prize;
+        }
+
+        // 5. Live Vector Injection: Visual Matrix Archive Images
+        const matrixImages = document.querySelectorAll('.matrix-grid .matrix-item img');
+        if (matrixImages.length >= 2) {
+            if (data.archive_img_1) matrixImages[0].src = data.archive_img_1;
+            if (data.archive_img_2) matrixImages[1].src = data.archive_img_2;
+        }
+
+        // 6. Live Vector Injection: Floating Modernist Bubble Content Elements
+        const bubbleNodes = document.querySelectorAll('.floating-bubbles-container .bubble-floating');
+        if (bubbleNodes.length >= 2) {
+            if (data.bubble_img_1) {
+                bubbleNodes[0].setAttribute('data-img', data.bubble_img_1);
+                const bubbleInnerImg1 = bubbleNodes[0].querySelector('img');
+                if (bubbleInnerImg1) bubbleInnerImg1.src = data.bubble_img_1;
+            }
+            if (data.bubble_desc_1) bubbleNodes[0].setAttribute('data-desc', data.bubble_desc_1);
+            
+            if (data.bubble_img_2) {
+                bubbleNodes[1].setAttribute('data-img', data.bubble_img_2);
+                const bubbleInnerImg2 = bubbleNodes[1].querySelector('img');
+                if (bubbleInnerImg2) bubbleInnerImg2.src = data.bubble_img_2;
+            }
+            if (data.bubble_desc_2) bubbleNodes[1].setAttribute('data-desc', data.bubble_desc_2);
+        }
+
+    } catch (pipelineFault) {
+        console.warn("Isolated Data Sync Paused safely: Check row fields or RLS policies.", pipelineFault.message);
+    }
+})();
+
+// ============================================================================
+// CORE USER INTERFACE CONTROL LOOPS (ORIGINAL REVERTED FUNCTIONS)
+// ============================================================================
 function toggleWinnerPanel(cardElement) {
     cardElement.classList.toggle("active");
     const promptText = cardElement.querySelector(".click-prompt");
@@ -112,6 +217,74 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(renderEngineLoop);
 });
 
+
+
+
+
+// countdown 
+function initializeMatrixCountdowns() {
+    // =================================================================
+    // CONFIGURATION AREA: SET TARGET DATE STRING
+    // =================================================================
+    const CONFIG = {
+        targetDate: "2026-06-26T07:00:00+05:45"
+    };
+    // =================================================================
+
+    const countdownElements = document.querySelectorAll('.matrix-countdown');
+    
+    // Check if dynamic data attribute overriding exists from database
+    const dynamicTarget = countdownElements[0]?.getAttribute('data-target');
+    const finalTargetString = dynamicTarget || CONFIG.targetDate;
+    const targetTime = new Date(finalTargetString).getTime();
+
+    if (isNaN(targetTime)) {
+        return;
+    }
+
+    countdownElements.forEach(container => {
+        const daysElement = container.querySelector('.days');
+        const hoursElement = container.querySelector('.hours');
+        const minutesElement = container.querySelector('.minutes');
+        const secondsElement = container.querySelector('.seconds');
+        
+        let intervalId;
+
+        function updateClock() {
+            const now = Date.now();
+            const difference = targetTime - now;
+            
+            if (difference <= 0) {
+                container.innerHTML = `<span style="font-size:0.85rem; font-weight:700; color:var(--accent-amber); letter-spacing:0.5px;">EXECUTION FRAME OPEN // IN PROGRESS</span>`;
+                if (intervalId) clearInterval(intervalId);
+                return true; 
+            }
+            
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+            
+            if (daysElement) daysElement.textContent = String(days).padStart(2, '0');
+            if (hoursElement) hoursElement.textContent = String(hours).padStart(2, '0');
+            if (minutesElement) minutesElement.textContent = String(minutes).padStart(2, '0');
+            if (secondsElement) secondsElement.textContent = String(seconds).padStart(2, '0');
+            return false;
+        }
+        
+        const isExpired = updateClock(); 
+        
+        if (!isExpired) {
+            // Clears prior intervals to prevent speed multiplication loops
+            if (container.dataset.intervalId) clearInterval(parseInt(container.dataset.intervalId));
+            intervalId = setInterval(updateClock, 1000);
+            container.dataset.intervalId = intervalId;
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initializeMatrixCountdowns);
+
 // High performance scroll intersection mapping engine
 document.addEventListener("DOMContentLoaded", () => {
     const scrollElements = document.querySelectorAll(".reveal-on-scroll");
@@ -119,15 +292,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const scrollObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Flash visible state to hardware layers
                 entry.target.classList.add("is-visible");
-                // Free up processing loop cycles by unobserving animated items
                 observer.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.20,        // Activates when 20% of element touches frame
-        rootMargin: "0px 0px -40px 0px" // Offset to avoid awkward snapping borders
+        threshold: 0.20,
+        rootMargin: "0px 0px -40px 0px"
     });
 
     scrollElements.forEach(element => {

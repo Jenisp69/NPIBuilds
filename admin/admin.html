@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPI BUILDS // GATEWAY CONTROL PANEL</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        /* Scoped dashboard styling utilizing your existing design variables */
+        .admin-container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            background: rgba(20, 24, 33, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 4px;
+        }
+        .admin-grid-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .admin-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .admin-group label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 1px;
+        }
+        .admin-input {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 0.9rem;
+            outline: none;
+            box-sizing: border-box;
+            transition: border-color 0.2s ease;
+        }
+        .admin-input:focus {
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        .auth-hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-light" id="light-top"></div>
+
+    <div class="wrapper">
+        <header class="arch-header">
+            <div class="brand-animate">
+                <a href="index.html" class="brand-link">
+                    <img src="./NPI college/Build.png" alt="NPI BUILD Logo" class="brand-logo"> 
+                    <div class="brand">NPI <span class="thin">BUILDS</span></div>
+                </a>
+            </div>
+            <nav class="status-indicator">
+                <span class="pillar-dot" style="background:#ffc107;"></span> ADMINISTRATIVE MODE
+            </nav>
+        </header>
+
+        <main class="admin-container">
+            <div id="auth-gate">
+                <span class="block-tag">SECURITY VALIDATION REQUIRED</span>
+                <h2 style="margin-bottom:20px;">GATEWAY LOGIN</h2>
+                <div class="admin-grid-layout">
+                    <div class="admin-group">
+                        <label>ADMINISTRATOR EMAIL</label>
+                        <input type="email" id="auth-email" class="admin-input" placeholder="Enter admin email...">
+                    </div>
+                    <div class="admin-group">
+                        <label>PASSWORD</label>
+                        <input type="password" id="auth-password" class="admin-input" placeholder="Enter security passphrase...">
+                    </div>
+                    <button id="btn-login" class="Mainbtn-neon" style="width:100%; border:none; padding:14px; cursor:pointer;">AUTHENTICATE NODES</button>
+                </div>
+            </div>
+
+            <div id="dashboard-engine" class="auth-hidden">
+                <span class="block-tag">00 // PLATFORM VECTOR MANAGEMENT</span>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:30px;">
+                    <h2>DATA MATRIX</h2>
+                    <button id="btn-logout" class="Mainbtn-glass" style="padding:8px 16px; font-size:0.8rem; cursor:pointer;">TERMINATE SESSION</button>
+                </div>
+
+                <form id="matrix-update-form" class="admin-grid-layout">
+                    <div class="admin-group">
+                        <label>COUNTDOWN TARGET DATE (ISO 8601 FORMAT)</label>
+                        <input type="text" id="db-countdown" class="admin-input" placeholder="YYYY-MM-DDTHH:MM:SS+05:45">
+                    </div>
+
+                    <div class="footer-divider" style="margin:10px 0;"></div>
+
+                    <div class="admin-group">
+                        <label>INSIGHT 1 // DATE STAMP</label>
+                        <input type="text" id="db-date1" class="admin-input">
+                    </div>
+                    <div class="admin-group">
+                        <label>INSIGHT 1 // HEADING TITLE</label>
+                        <input type="text" id="db-title1" class="admin-input">
+                    </div>
+                    <div class="admin-group">
+                        <label>INSIGHT 1 // SUMMARY BODY TEXT</label>
+                        <input type="text" id="db-body1" class="admin-input">
+                    </div>
+
+                    <div class="footer-divider" style="margin:10px 0;"></div>
+
+                    <div class="admin-group">
+                        <label>INSIGHT 2 // HEADING TITLE</label>
+                        <input type="text" id="db-title2" class="admin-input">
+                    </div>
+                    <div class="admin-group">
+                        <label>INSIGHT 2 // PRIZE VALUATION (WITHOUT SYMBOLS)</label>
+                        <input type="text" id="db-prize2" class="admin-input" placeholder="e.g. 5,000">
+                    </div>
+                    <div class="admin-group">
+                        <label>INSIGHT 2 // SUMMARY BODY TEXT</label>
+                        <input type="text" id="db-body2" class="admin-input">
+                    </div>
+
+                    <div class="footer-divider" style="margin:10px 0;"></div>
+
+                    <div class="admin-group">
+                        <label>COMPETITION CARD // SYSTEM STATUS METRIC</label>
+                        <input type="text" id="db-comp-status" class="admin-input">
+                    </div>
+                    <div class="admin-group">
+                        <label>COMPETITION CARD // STRUCTURAL TITLE</label>
+                        <input type="text" id="db-comp-title" class="admin-input">
+                    </div>
+                    <div class="admin-group">
+                        <label>COMPETITION CARD // COMPREHENSIVE DETAILS</label>
+                        <input type="text" id="db-comp-desc" class="admin-input">
+                    </div>
+                    <div class="admin-group">
+                        <label>COMPETITION CARD // PRIZE POOL STRING</label>
+                        <input type="text" id="db-comp-prize" class="admin-input" placeholder="Total CASH PRIZE: NPR X,XXX">
+                    </div>
+
+                    <button type="submit" class="Mainbtn-neon" style="width:100%; border:none; padding:16px; margin-top:20px; cursor:pointer;">COMMIT DATA VECTOR UPDATES</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="JS/admin.js"></script>
+</body>
+</html>

@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=300;400;500;700&family=Space+Grotesk:wght=600;700&display=swap');
 
+/* =========================================================================
+   01. GLOBAL ARCHITECTURE ENGINE & VARIABLES (:root)
+   ========================================================================= */
 :root {
     --bg-stone: #0d0d0f;                             /* Core dark slate background canvas base */
     --panel-bg: #141418;                             /* Elevated surface color for grid content cards */
@@ -57,12 +60,14 @@ body {
 /* Master Structural Grid Wrapping (Expanded for Ultra-Wide Frame) */
 .wrapper {
     width: 100%;
-    max-width: 1500px;                              /* Expanded headroom framework requested for high-res layout symmetry */
-    margin: 0 auto;                                 /* Centers the content frame perfectly on wide layouts */
+    max-width: 1500px;                               /* Expanded headroom framework requested for high-res layout symmetry */
+    margin: 0 auto;                                  /* Centers the content frame perfectly on wide layouts */
     padding: clamp(1.5rem, 3vw, 2.435rem) clamp(1rem, 2vw, 2rem); /* Fluid responsive breathing margins */
 }
 
-/* Structural Header Axis */
+/* =========================================================================
+   02. SITE NAVIGATION & STRUCTURAL HEADER AXIS
+   ========================================================================= */
 .arch-header {
     display: flex;
     justify-content: space-between;
@@ -133,7 +138,9 @@ body {
     flex-shrink: 0;
 }
 
-/* Structural Content Blocks Layout (Aligned perfectly flush with 1500px boundaries) */
+/* =========================================================================
+   03. CORE CORE LAYOUT WRAPPERS & GRID MATRIX PANELS
+   ========================================================================= */
 .space-grid {
     position: relative;
     display: grid;
@@ -143,7 +150,7 @@ body {
 }
 
 /* =========================================================================
-   STYLE SPECIFICATION: CONTAINED HIGH-PRECISION HERO BANNER
+   04. STYLE SPECIFICATION: CONTAINED HIGH-PRECISION HERO BANNER
    ========================================================================= */
 .Mainhero-section {
     position: relative;
@@ -249,6 +256,7 @@ body {
 .Maingradient-text {
     background: linear-gradient(135deg, #00f2fe, #a855f7);
     -webkit-background-clip: text;
+    background-clip: text;                          /* FIXED: Standard property defined for vendor prefix validation */
     -webkit-text-fill-color: transparent;
 }
 
@@ -305,8 +313,10 @@ body {
     display: none !important; 
 }
 
+
+
 /* ==========================================================================
-   INSTITUTIONAL BRANDING AXIS & BLOCKS
+   05. INSTITUTIONAL BRANDING AXIS & METRICS BLOCKS
    ========================================================================== */
 .institutional-axis {
     grid-column: 1 / -1;       
@@ -375,13 +385,16 @@ body {
     text-align: right;
 }
 
+/* =========================================================================
+   06. CENTRAL CONTENT MODULE SYSTEM (.block & .hero-block Frameworks)
+   ========================================================================= */
 .block {
     background: var(--panel-bg);
     border: 1px solid var(--border-line);
     border-radius: var(--curve-minimal);
     padding: clamp(1.5rem, 4vw, 3rem);              /* Fluid internal content padding strategy */
     transition: var(--transition-slow);
-    width: 85%;                                    /* Extends component bounding lines fully to grid borders */
+    width: 85%;                                     /* Extends component bounding lines fully to grid borders */
 }
 
 .block.is-visible:hover,
@@ -402,7 +415,7 @@ body {
 
 .hero-block {
     grid-column: 1 / -1;
-    width : 69%;                                    /* Stretches full width to align with background mask edges */
+    width: 69%;                                     /* Stretches full width to align with background mask edges */
 }
 
 h1 {
@@ -464,10 +477,15 @@ h2 {
     max-width: 750px;                               /* Local typography constraint anchor for feed content */
 }
 
-/* Competitions Block Elements */
+
+
+
+/* =========================================================================
+   07. COMPETITIONS CARD ARCHITECTURE PLATFORM
+   ========================================================================= */
 .competitions-block {
     grid-column: 1 / -1;
-    width: 78%;                                     /* Full row width to align with background mask edges */
+    width: 100%;                                    /* Stretches full width to align with background mask edges */
 }
 
 .neongreen-text {
@@ -481,8 +499,15 @@ h2 {
     display: grid;
     grid-template-columns: 1fr 1fr;                 /* Preserved crisp explicit two-column grid division ratio */
     gap: 2rem;
-    width: 100%;
 }
+
+
+@media (min-width: 1118px) {
+    .comp-grid {
+        margin-right: 22rem;
+    }
+}
+
 
 .comp-card {
     background: rgba(255, 255, 255, 0.01);
@@ -492,6 +517,7 @@ h2 {
     display: flex;
     flex-direction: column;
     transition: var(--transition-slow);
+
 }
 
 .comp-card:hover {
@@ -585,6 +611,8 @@ h2 {
     box-shadow: 0 10px 20px rgba(0,0,0,0.4);
 }
 
+
+
 /* Past Archive Hidden Drawer Controls */
 .past {
     cursor: pointer;
@@ -645,89 +673,250 @@ h2 {
     color: #fff;
 }
 
-/* Media Matrix Layout Rules (Unified with main wrapper grid limits) */
-.gallery-block {
-    margin-top: 40px;
-    width: 100%;                                    /* Extends full canvas space width layout */
+
+/* =========================================================================
+   08. USER-GENERATED TECH GALLERY SHOWCASE CSS ENGINE
+   ========================================================================= */
+.tech-gallery-block {
+    margin-top: 60px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
 
-.matrix-grid {
+.gallery-header-matrix {
+    margin-bottom: 30px;
+}
+
+.gallery-subtitle {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 8px;
+    letter-spacing: 0.5px;
+}
+
+/* Track configuration to support 2-3 massive layouts side-by-side */
+.showcase-display-track {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); /* Fluid column layout generator core */
-    gap: 20px;
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr));
+    gap: 30px;
+    margin-top: 25px;
 }
 
-.matrix-item {
+.showcase-card {
     position: relative;
+    background: #0f0f0f;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 6px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
-    aspect-ratio: 16 / 10;
-    background: #111;
-}
-
-.matrix-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(30%) contrast(110%);
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-/* Glassy Hover Mask Architecture */
-.matrix-glass-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(10, 10, 10, 0.4);
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    transition: all 0.3s ease;
     display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease;
+    cursor: pointer;
+}
+
+.showcase-card:hover {
+    border-color: var(--accent-amber, #dfa530);
+    transform: translateY(-4px);
+}
+
+
+
+/* Header alignment matrix for title and the action button */
+.gallery-header-matrix {
+    display: flex;
+    justify-content: space-between;
     align-items: flex-end;
-    padding: 20px;
-    opacity: 0;
+    gap: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+    padding-bottom: 20px;
 }
 
-.matrix-item:hover .matrix-glass-overlay {
-    opacity: 1;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    background: rgba(22, 22, 22, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+.header-title-wrapper {
+    flex: 1;
 }
 
-.matrix-item:hover .matrix-img {
-    transform: scale(1.03);
+/* Micro-engineered View All Link Utilities */
+.gallery-control-action {
+    display: flex;
+    align-items: center;
 }
 
-.matrix-meta {
-    transform: translateY(10px);
+.link-view-all {
+    text-decoration: none;
+    font-family: monospace;
+    
+    font-size: 0.7rem;             /*  font size and  italic styling */
+    font-style: italic;            /* Makes the typography italicized */
+    
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease, padding-right 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    padding-left: 12px;
+}
+
+.link-view-all::before {
+    content: '[ ';
+    color: var(--accent-amber, #dfc08a);
+    margin-right: 4px;
     transition: transform 0.3s ease;
 }
 
-.matrix-item:hover .matrix-meta {
-    transform: translateY(0);
-}
-
-.matrix-node {
-    display: block;
-    font-size: 0.75rem;
-    color: #dfa530; /* Golden accent structural typography token */
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.matrix-caption {
-    font-size: 0.95rem;
+.link-view-all:hover {
     color: #ffffff;
-    font-weight: 500;
 }
+
+.link-view-all:hover::before {
+    transform: translateX(-2px);
+}
+
+.view-bracket {
+    color: var(--accent-amber, #dfc08a);
+    margin-left: 4px;
+    transition: display 0.3s ease;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 768px) {
+    .gallery-header-matrix {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .gallery-control-action {
+        align-self: flex-end;
+    }
+}
+
+
+
+
+
+.media-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Enforces clean cinematic aspect ratios */
+    background: #000;
+    overflow: hidden;
+}
+
+.showcase-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.showcase-card:hover .showcase-media {
+    transform: scale(1.02);
+}
+
+.media-type-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 4px 10px;
+    font-family: monospace;
+    font-size: 0.65rem;
+    color: var(--accent-amber, #dfa530);
+    letter-spacing: 1px;
+    border-radius: 2px;
+}
+
+.showcase-meta-panel {
+    padding: 20px;
+    background: linear-gradient(to top, rgba(10, 10, 10, 1), rgba(15, 15, 15, 0.9));
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.project-author {
+    font-family: monospace;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.project-title {
+    font-size: 1.15rem;
+    color: #ffffff;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Submission Interactive Zone styling */
+.submission-action-zone {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+    /* Force full-width grid coverage so centering works flawlessly */
+    grid-column: 1 / -1; 
+}
+
+.btn-matrix-submit {
+    background: transparent;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    padding: 20px 40px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    transition: background 0.3s ease, border-color 0.3s ease;
+    width: 100%;
+    max-width: 500px;
+}
+
+.btn-matrix-submit:hover {
+    background: rgba(223, 165, 48, 0.04);
+    border: 1px solid var(--accent-amber, #dfa530);
+}
+
+.btn-glitch-text {
+    font-family: monospace;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.btn-matrix-submit:hover .btn-glitch-text {
+    color: var(--accent-amber, #dfa530);
+}
+
+.btn-subtext {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.5px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 /* =========================================================================
-   HIGH-PERFORMANCE FLOATING GLASS BUBBLES EXTRA MATRIX SETUP
+   09. DYNAMIC FLOATING GLASS BUBBLES GRAPHICS LAYER
    ========================================================================= */
 .floating-bubbles-container {
     grid-column: 2;
@@ -779,16 +968,18 @@ h2 {
 
 /* Anchor baselines down the right column field */
 .bubble-node-1 {
-    top: 12%;
-    right: 5%;
+    top: 149%;
+    right: 15%;
 }
 
 .bubble-node-2 {
-    top: 52%;
+    top: 235%;
     right: 12%;
 }
 
-/* Glassmorphism Popup Engine Overlay */
+/* =========================================================================
+   10. MODAL DISPLAY SYSTEM & INTERACTIVE POPUP ENGINE
+   ========================================================================= */
 #glassy-popup-overlay {
     position: fixed;
     top: 0; 
@@ -836,6 +1027,7 @@ h2 {
     text-shadow: 0 1px 2px rgba(0,0,0,0.8);
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;                                  /* FIXED: Added standard property directly below vendor prefix fallback */
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -866,15 +1058,71 @@ h2 {
     to { opacity: 1; }
 }
 
+/* =========================================================================
+   11. HIGH-TECH TELEMETRY COUNTDOWN INTERFACE MODULE
+   ========================================================================= */
+.matrix-countdown {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 6px;
+    padding: 8px 14px;
+    margin: 12px 0;
+    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    width: fit-content;
+}
 
+.countdown-segment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 36px;
+}
 
+.countdown-segment span {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
 
-/* Footer Grid Base Anchor (Unified with main structural wrapper bounds) */
+.countdown-segment label {
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.35);
+    margin-top: 3px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.countdown-divider {
+    font-size: 1.1rem;
+    color: var(--accent-amber, #dfc08a);
+    font-weight: 700;
+    padding: 0 6px;
+    transform: translateY(-6px);
+    animation: pulse-telemetry-glow 1s infinite alternate;
+}
+
+@keyframes pulse-telemetry-glow {
+    from { opacity: 0.25; }
+    to { opacity: 1; }
+}
+
+/* =========================================================================
+   12. ARCHITECTURAL GEOMETRIC FOOTER WRAPPER BLOCK
+   ========================================================================= */
 .arch-footer {
     margin-top: clamp(3rem, 10vw, 6rem);             /* Fluid separation values for footer area */
     width: 100%;                                    /* Extends full width to capture geometric rows layout grid */
     margin-left: auto;
     margin-right: auto;
+    
+    /* FIX: Force full-bleed structural span across all grid columns */
+    grid-column: 1 / -1; 
 }
 
 .footer-divider {
@@ -885,7 +1133,7 @@ h2 {
 
 .footer-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;                 /* Preserves baseline footer layout columns symmetry */
+    grid-template-columns: 1fr 1fr;                  /* Preserves baseline footer layout columns symmetry */
     gap: 2rem;
 }
 
@@ -927,7 +1175,7 @@ h2 {
 }
 
 /* =========================================================================
-   RESPONSIVE LAYOUT MATRIX PATHS (MEDIA QUERIES)
+   13. RESPONSIVE LAYOUT MATRIX PATHS (MEDIA QUERIES)
    ========================================================================= */
 @media (max-width: 900px) {
     .space-grid {
@@ -1005,9 +1253,9 @@ h2 {
     }
 }
 
-/* ==========================================================================
-   ANIMATION ENGINE UTILITIES
-   ========================================================================== */
+/* =========================================================================
+   14. ANIMATION CORE MATRIX UTILITIES
+   ========================================================================= */
 .reveal-on-scroll {
     opacity: 0;
     transform: translateY(30px);
