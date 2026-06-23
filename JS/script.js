@@ -70,7 +70,7 @@ const SUPABASE_ANON_KEY = "sb_publishable_aD_OIx_4gmkMWicC2QcH8w_A0Tm1DYU";
             if (prizeNode && data.comp_card_prize) prizeNode.textContent = data.comp_card_prize;
         }
 
-// 5. Live Vector Injection: Visual Matrix Archive Images
+        // 5. Live Vector Injection: Visual Matrix Archive Images
         const matrixImages = document.querySelectorAll('.matrix-grid .matrix-item img');
         if (matrixImages.length >= 2) {
             if (data.archive_img_1) matrixImages[0].src = data.archive_img_1;
@@ -78,22 +78,26 @@ const SUPABASE_ANON_KEY = "sb_publishable_aD_OIx_4gmkMWicC2QcH8w_A0Tm1DYU";
         }
 
         // =========================================================================
-        // 6. Live Vector Injection: Floating Modernist Bubble Content Elements (FIXED)
+        // 6. Live Vector Injection: Floating Modernist Bubble Content Elements (FIXED STRUCT)
         // =========================================================================
         const bubbleNodes = document.querySelectorAll('.floating-bubbles-container .bubble-floating');
         if (bubbleNodes.length >= 2) {
             // Only overwrite if the database field exists and isn't a blank placeholder string
             if (data.bubble_img_1 && data.bubble_img_1.trim() !== "" && data.bubble_img_1 !== "PLACEHOLDER") {
                 bubbleNodes[0].setAttribute('data-img', data.bubble_img_1);
-                const bubbleInnerImg1 = bubbleNodes[0].querySelector('img');
-                if (bubbleInnerImg1) bubbleInnerImg1.src = data.bubble_img_1;
+                // Apply directly as a background style to preserve modernist bubble geometry
+                bubbleNodes[0].style.backgroundImage = `url('${data.bubble_img_1}')`;
+                bubbleNodes[0].style.backgroundSize = 'cover';
+                bubbleNodes[0].style.backgroundPosition = 'center';
             }
             if (data.bubble_desc_1) bubbleNodes[0].setAttribute('data-desc', data.bubble_desc_1);
             
             if (data.bubble_img_2 && data.bubble_img_2.trim() !== "" && data.bubble_img_2 !== "PLACEHOLDER") {
                 bubbleNodes[1].setAttribute('data-img', data.bubble_img_2);
-                const bubbleInnerImg2 = bubbleNodes[1].querySelector('img');
-                if (bubbleInnerImg2) bubbleInnerImg2.src = data.bubble_img_2;
+                // Apply directly as a background style to preserve modernist bubble geometry
+                bubbleNodes[1].style.backgroundImage = `url('${data.bubble_img_2}')`;
+                bubbleNodes[1].style.backgroundSize = 'cover';
+                bubbleNodes[1].style.backgroundPosition = 'center';
             }
             if (data.bubble_desc_2) bubbleNodes[1].setAttribute('data-desc', data.bubble_desc_2);
         }
@@ -101,7 +105,7 @@ const SUPABASE_ANON_KEY = "sb_publishable_aD_OIx_4gmkMWicC2QcH8w_A0Tm1DYU";
     } catch (pipelineFault) {
         console.warn("Isolated Data Sync Paused safely: Check row fields or RLS policies.", pipelineFault.message);
     }
-})();
+})(); // <--- THIS WAS PREVIOUSLY ACCIDENTALLY REMOVED OR CLOSED WRONG
 
 // ============================================================================
 // CORE USER INTERFACE CONTROL LOOPS (ORIGINAL REVERTED FUNCTIONS)
@@ -219,10 +223,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize rendering tracking axis
     requestAnimationFrame(renderEngineLoop);
 });
-
-
-
-
 
 // countdown 
 function initializeMatrixCountdowns() {
