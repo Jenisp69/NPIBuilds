@@ -192,13 +192,13 @@ body {
 }
 
 .Mainslide-1 {
-    background-image: url('../NPI college/Whole grp likely banner uneditted.jpg');
+    background-image: url('../images-resources/Whole grp likely banner uneditted.jpg');
     background-position: center 105%;              /* Focal vertical height displacement node alignment */
     animation-delay: 0s;
 }
 
 .Mainslide-2 {
-    background-image: url('../NPI college/small exicted group photo uneditted possible banner.jpg');
+    background-image: url('../images-resources/small exicted group photo uneditted possible banner.jpg');
     background-position: center 78%;               /* Focal vertical height displacement node alignment */
     animation-delay: 6s;
 }
