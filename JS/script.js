@@ -26,13 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentMouseY = 0;
     let currentScrollY = window.scrollY;
 
-    // Track cross-window normalized coordinate deviations
     document.addEventListener('mousemove', (event) => {
         targetMouseX = (event.clientX - window.innerWidth / 2) * 0.04;
         targetMouseY = (event.clientY - window.innerHeight / 2) * 0.04;
     });
 
-    // Track scroll events to inject into the rendering matrix
     document.addEventListener('scroll', () => {
         currentScrollY = window.scrollY;
     }, { passive: true });
@@ -50,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     });
 
-    // Dynamic UI Injector for Glassy Modal
     function triggerGlassyPopup(imgSrc, descText) {
         const existingOverlay = document.getElementById('glassy-popup-overlay');
         if(existingOverlay) existingOverlay.remove();
@@ -73,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Bind click events to individual nodes
     bubbles.forEach(bubble => {
         bubble.addEventListener('click', () => {
             const imageSource = bubble.getAttribute('data-img') || './images-resources/NPIindustriallooking.jpg';
@@ -108,18 +104,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Countdown Processing Engine
 function initializeMatrixCountdowns() {
-    // =================================================================
-    // CONFIGURATION AREA: SET DEFAULT TARGET DATE STRING
-    // =================================================================
     const CONFIG = {
         targetDate: "2026-07-10T07:00:00+05:45"
     };
-    // =================================================================
 
     const countdownElements = document.querySelectorAll('.matrix-countdown');
     
     countdownElements.forEach(container => {
-        // Fall back cleanly to CONFIG.targetDate if the specific HTML container element doesn't have a data-target attribute
         const dynamicTarget = container.getAttribute('data-target');
         const finalTargetString = dynamicTarget || CONFIG.targetDate;
         
