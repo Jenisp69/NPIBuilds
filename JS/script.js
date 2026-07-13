@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Countdown Processing Engine
 function initializeMatrixCountdowns() {
     const CONFIG = {
-        targetDate: "2026-07-10T07:00:00+05:45"
+        targetDate: "2026-07-19T10:00:00+05:45"
     };
 
     const countdownElements = document.querySelectorAll('.matrix-countdown');
@@ -122,7 +122,8 @@ function initializeMatrixCountdowns() {
         const minutesElement = container.querySelector('.minutes');
         const secondsElement = container.querySelector('.seconds');
         
-        let intervalId;
+        // Block-scoped instance variables to cleanly isolate concurrent interval memory paths
+        let localIntervalId = null;
 
         function updateClock() {
             const now = Date.now();
@@ -130,7 +131,7 @@ function initializeMatrixCountdowns() {
             
             if (difference <= 0) {
                 container.innerHTML = `<span style="font-size:0.85rem; font-weight:700; color:var(--accent-amber); letter-spacing:0.5px;">EXECUTION FRAME OPEN // IN PROGRESS</span>`;
-                if (intervalId) clearInterval(intervalId);
+                if (localIntervalId) clearInterval(localIntervalId);
                 return true; 
             }
             
@@ -149,9 +150,11 @@ function initializeMatrixCountdowns() {
         const isExpired = updateClock(); 
         
         if (!isExpired) {
-            if (container.dataset.intervalId) clearInterval(parseInt(container.dataset.intervalId));
-            intervalId = setInterval(updateClock, 1000);
-            container.dataset.intervalId = intervalId;
+            if (container.dataset.intervalId) {
+                clearInterval(parseInt(container.dataset.intervalId));
+            }
+            localIntervalId = setInterval(updateClock, 1000);
+            container.dataset.intervalId = localIntervalId;
         }
     });
 }
